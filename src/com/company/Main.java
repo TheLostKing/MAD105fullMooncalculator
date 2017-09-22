@@ -7,15 +7,16 @@ public class Main {
     public static void main(String[] args) {
 	    // write your code here
         LocalDateTime current = LocalDateTime.now();
-        LocalDateTime firstfullmoon = LocalDateTime.of(2017, 1, 12, 4, 35, 12);
-        LocalDateTime nextFullMoon = firstfullmoon;
+        LocalDateTime firstfullmoon = LocalDateTime.of(2017, 1, 12, 4, 35, 12); //holds time of the first full moon of 2017
+        LocalDateTime nextFullMoon = firstfullmoon; //starts at first full moon of 2017
 
-        while (nextFullMoon.isBefore(current)){
-            long minutesBetweenFullMoons = 42524;
-            nextFullMoon = nextFullMoon.plusMinutes(minutesBetweenFullMoons);
-            System.out.println(nextFullMoon);
+        while (nextFullMoon.isBefore(current)){ //loops until the full moon is after the current date and time
+            long secondsBetweenFullMoons = 42524*60; //the amount of minutes between full moons
+            nextFullMoon = nextFullMoon.plusSeconds(secondsBetweenFullMoons); //sets next full moon to the date of the next full moon
+            //System.out.println(nextFullMoon); //test code to check how value changes during loop
         }
 
-        System.out.print("The current date is " + current + "\nThe next full moon is " + nextFullMoon);
+        System.out.println("The current date is " + current.getMonth() + " " + current.getDayOfMonth() + " " + current.getYear());
+        System.out.println("The next full moon is " + nextFullMoon.getMonth() + " " + nextFullMoon.getDayOfMonth() + " " + nextFullMoon.getYear());
     }
 }
