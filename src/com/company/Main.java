@@ -12,7 +12,7 @@ public class Main {
 
         while (nextFullMoon.isBefore(current)){ //loops until the full moon is after the current date and time
             long secondsBetweenFullMoons = 42524*60; //the amount of minutes between full moons
-            nextFullMoon = nextFullMoon.plusSeconds(secondsBetweenFullMoons); //sets next full moon to the date of the next full moon
+            nextFullMoon = nextFullMoon.plusSeconds(secondsBetweenFullMoons);
             //System.out.println(nextFullMoon); //test code to check how value changes during loop
         }
 
